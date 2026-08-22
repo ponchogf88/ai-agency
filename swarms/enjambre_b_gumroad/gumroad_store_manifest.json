@@ -1,0 +1,72 @@
+{
+  "store_name": "AI Agency MTY Digital Assets Hub",
+  "currency": "USD",
+  "support_email": "lic.jagf87@gmail.com",
+  "support_whatsapp": "+528140050088",
+  "products": [
+    {
+      "sku": "AI-WA-ROUTER-01",
+      "name": "WhatsApp AI Lead Router & Booking Agent (n8n + Gemini 2.0)",
+      "price": 39.0,
+      "file": "agencia-core/dist/whatsapp_ai_lead_router.zip",
+      "tags": [
+        "n8n",
+        "whatsapp",
+        "gemini-ai",
+        "automation",
+        "crm"
+      ]
+    },
+    {
+      "sku": "AI-CRO-ENGINE-02",
+      "name": "Automated Site CRO & Speed Diagnostic Engine (n8n)",
+      "price": 49.0,
+      "file": "agencia-core/dist/cro_speed_diagnostic_engine.zip",
+      "tags": [
+        "pagespeed",
+        "cro",
+        "lead-generation",
+        "audit",
+        "n8n"
+      ]
+    },
+    {
+      "sku": "AI-PAY-FULFILL-03",
+      "name": "Instant Payment Auto-Fulfillment Blueprint (Make.com)",
+      "price": 29.0,
+      "file": "agencia-core/dist/stripe_mercadopago_fulfillment.zip",
+      "tags": [
+        "stripe",
+        "mercadopago",
+        "make",
+        "ecommerce",
+        "fulfillment"
+      ]
+    },
+    {
+      "sku": "AI-MEGA-SUITE-04",
+      "name": "The 14-Agent Marketing OS Autonomous Engine (Python)",
+      "price": 79.0,
+      "file": "agencia-core/dist/mega_agency_suite.zip",
+      "tags": [
+        "multi-agent",
+        "python",
+        "marketing-os",
+        "anti-slop",
+        "agency"
+      ]
+    }
+  ],
+  "discount_codes": [
+    {
+      "code": "LAUNCH2026",
+      "discount_percentage": 20,
+      "max_uses": 100
+    },
+    {
+      "code": "AMDA_VIP",
+      "discount_percentage": 30,
+      "max_uses": 50
+    }
+  ]
+}

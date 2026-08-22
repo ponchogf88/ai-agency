@@ -1,0 +1,65 @@
+{
+  "name": "Make.com — Stripe / MercadoPago Auto-Fulfillment & Private Client Portal Setup",
+  "description": "Recibe webhook de pago exitoso, aprovisiona acceso privado y notifica por WhatsApp.",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "version": 1,
+      "parameters": {
+        "hook": "stripe_payment_success_hook"
+      },
+      "mapper": {}
+    },
+    {
+      "id": 2,
+      "module": "json:ParseJSON",
+      "version": 1,
+      "parameters": {
+        "type": "strict"
+      },
+      "mapper": {
+        "json": "{{1.data}}"
+      }
+    },
+    {
+      "id": 3,
+      "module": "router:router",
+      "version": 1,
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 4,
+              "module": "google-drive:createAFolder",
+              "version": 1,
+              "mapper": {
+                "name": "{{2.customer.name}} - Assets & Onboarding",
+                "folderId": "ROOT_AGENCY_DELIVERABLES"
+              }
+            },
+            {
+              "id": 5,
+              "module": "http:ActionSendRequest",
+              "version": 3,
+              "mapper": {
+                "url": "https://api.whatsapp.com/v1/messages",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Authorization",
+                    "value": "Bearer WHATSAPP_ACCESS_TOKEN"
+                  }
+                ],
+                "body": {
+                  "to": "{{2.customer.phone}}",
+                  "text": "¡Pago confirmado! Tu portal de entrega y onboarding privado está listo aquí: https://agencia.mty/portal/{{4.id}}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

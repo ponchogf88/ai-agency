@@ -1,0 +1,290 @@
+{
+  "Head of Marketing": {
+    "icon": "🖤",
+    "role": "Mastermind & Orchestrator",
+    "data": {
+      "mission": "Dominar la presencia y conversión para Gutiérrez & Asociados Despacho Jurídico en el nicho de Litigio Civil, Mercantil & Familiar Monterrey.",
+      "target_type": "lead",
+      "core_angle": "Velocidad, resultados medibles y eliminación de fricción técnica.",
+      "pipeline_stages": [
+        "1. Auditoría y Benchmark de Competencia",
+        "2. Generación de Creativos y Oferta Irresistible",
+        "3. Copywriting con Filtro Anti-Slop",
+        "4. Distribución (Email / Social / SEO)",
+        "5. Scoring Final y Validación"
+      ]
+    },
+    "feedback": [
+      "Estrategia global estructurada."
+    ]
+  },
+  "Competitor Analyst": {
+    "icon": "🟩",
+    "role": "Meta Ads & Gap Finder",
+    "data": {
+      "detected_gaps": [
+        "La competencia en Litigio Civil, Mercantil & Familiar Monterrey tarda más de 24h en cotizar: Ofrecer cotización en 60 segundos.",
+        "Sitios de la competencia lentos y no optimizados para móvil: Entregar landing con carga <1s.",
+        "Falta de transparencia en precios: Mostrar paquetes claros y directos."
+      ],
+      "recommended_angle": "La competencia en Litigio Civil, Mercantil & Familiar Monterrey tarda más de 24h en cotizar: Ofrecer cotización en 60 segundos.",
+      "meta_ad_trends": "Formatos de video corto y prueba social directa dominan en Litigio Civil, Mercantil & Familiar Monterrey."
+    },
+    "feedback": [
+      "Ángulo diferenciador identificado para Gutiérrez & Asociados Despacho Jurídico."
+    ]
+  },
+  "Analyst": {
+    "icon": "🟢",
+    "role": "Site & CRO Auditor (0-100)",
+    "data": {
+      "score_out_of_100": 45,
+      "grade": "C (Mejorable)",
+      "detected_issues": [
+        "Falta de botón directo a WhatsApp flotante en móvil.",
+        "Copy genérico sin propuesta de valor clara."
+      ],
+      "roi_opportunity": "Incremento estimado del +35% a +60% en prospectos con landing optimizada."
+    },
+    "feedback": [
+      "Score asignado: 45/100."
+    ]
+  },
+  "Creative Strategist": {
+    "icon": "⚪️",
+    "role": "Ad Hooks & Visual Concept Generator",
+    "data": {
+      "hooks_generated": [
+        "¿Sigues perdiendo clientes en Litigio Civil, Mercantil & Familiar Monterrey por no contestar a tiempo?",
+        "La razón por la que Gutiérrez & Asociados Despacho Jurídico puede duplicar sus citas este mes.",
+        "Antes vs Después: Cómo se ve un negocio tradicional vs uno automatizado.",
+        "Deja de mandar cotizaciones en PDFs que nadie abre: Haz esto.",
+        "El secreto de los negocios top en Litigio Civil, Mercantil & Familiar Monterrey para cerrar ventas por WhatsApp.",
+        "3 errores que te están costando miles de pesos en tu presencia web.",
+        "¿Por qué tus clientes prefieren a la competencia? El factor móvil.",
+        "Construimos tu infraestructura digital en 48 horas sin fricción.",
+        "La prueba de 5 segundos: ¿Tu web en Litigio Civil, Mercantil & Familiar Monterrey convence o confunde?",
+        "Atención 24/7 sin contratar más personal: Automatización real."
+      ],
+      "top_hook": "¿Sigues perdiendo clientes en Litigio Civil, Mercantil & Familiar Monterrey por no contestar a tiempo?"
+    },
+    "feedback": [
+      "10 ganchos creativos generados listos para distribución."
+    ]
+  },
+  "Pricing Strategist": {
+    "icon": "🟤",
+    "role": "Offer Architecture & Pricing Tiers",
+    "data": {
+      "tiers": [
+        {
+          "name": "Presencia Express",
+          "price": ",900 MXN",
+          "features": [
+            "Landing ultrarrápida",
+            "Botón directo a WhatsApp",
+            "Entrega 48h"
+          ]
+        },
+        {
+          "name": "Pipeline Comercial",
+          "price": ",800 MXN",
+          "features": [
+            "Landing + Dominio + Automatización de leads + Tarjeta digital"
+          ]
+        },
+        {
+          "name": "Retainer Crecimiento",
+          "price": ",500 MXN/mes",
+          "features": [
+            "Mantenimiento",
+            "Optimización continua",
+            "Reportes mensuales"
+          ]
+        }
+      ],
+      "recommended_entry_offer": "Presencia Express"
+    },
+    "feedback": [
+      "Tiers de precios y propuesta de valor calculados."
+    ]
+  },
+  "Copywriter": {
+    "icon": "🔷",
+    "role": "Conversion Copywriter",
+    "data": {
+      "raw_pitch": "Hola equipo de Gutiérrez & Asociados Despacho Jurídico,\n\nEstuve analizando su presencia digital y noté que actualmente su sitio web (sin sitio web activo (solo página de Facebook)) pierde conversiones por falta de llamadas a la acción claras.\n\nEn AI AGENCY MTY creamos soluciones directas:\n1. Landing page con carga instantánea (<1 segundo) enfocada 100% en cerrar ventas.\n2. Botón interactivo directo a su WhatsApp comercial para no perder ni un prospecto.\n3. Materiales digitales listos para presentar en 48 horas.\n\n¿Tienen 3 minutos esta semana para mostrarles una maqueta interactiva que armamos para Gutiérrez & Asociados Despacho Jurídico?",
+      "landing_headline": "Gutiérrez & Asociados Despacho Jurídico | Convierte visitas en clientes por WhatsApp"
+    },
+    "feedback": [
+      "Copy base redactado. Pasa a revisión del Editor."
+    ]
+  },
+  "Editor (Anti-AI Slop)": {
+    "icon": "🔶",
+    "role": "No-Slop Quality Gatekeeper",
+    "data": {
+      "approved_pitch": "Hola equipo de Gutiérrez & Asociados Despacho Jurídico,\n\nEstuve analizando su presencia digital y noté que actualmente su sitio web (sin sitio web activo (solo página de Facebook)) pierde conversiones por falta de llamadas a la acción claras.\n\nEn AI AGENCY MTY creamos soluciones directas:\n1. Landing page con carga instantánea (<1 segundo) enfocada 100% en cerrar ventas.\n2. Botón interactivo directo a su WhatsApp comercial para no perder ni un prospecto.\n3. Materiales digitales listos para presentar en 48 horas.\n\n¿Tienen 3 minutos esta semana para mostrarles una maqueta interactiva que armamos para Gutiérrez & Asociados Despacho Jurídico?",
+      "slop_check_status": "PASSED_WITH_ZERO_SLOP",
+      "readability_score": "10/10 (Directo y Humano)"
+    },
+    "feedback": [
+      "Filtro Anti-AI Slop aplicado: Texto 100% limpio y listo para enviar."
+    ]
+  },
+  "Email Marketer": {
+    "icon": "🔵",
+    "role": "Cold Outreach & Sequence Architect",
+    "data": {
+      "drip_sequence": [
+        {
+          "step": 1,
+          "timing": "Día 1",
+          "subject": "Propuesta rápida para Gutiérrez & Asociados Despacho Jurídico",
+          "body": ""
+        },
+        {
+          "step": 2,
+          "timing": "Día 3",
+          "subject": "Re: Propuesta rápida para Gutiérrez & Asociados Despacho Jurídico",
+          "body": "Hola, ¿pudieron checar la propuesta para Gutiérrez & Asociados Despacho Jurídico? Si les parece, les mando el link de la maqueta por aquí."
+        },
+        {
+          "step": 3,
+          "timing": "Día 6 (Breakup)",
+          "subject": "Último intento: Gutiérrez & Asociados Despacho Jurídico",
+          "body": "Entiendo que andan a tope. Si en el futuro quieren renovar su presencia digital, aquí estamos a la orden."
+        }
+      ],
+      "total_touchpoints": 3
+    },
+    "feedback": [
+      "Secuencia de 3 toques estructurada."
+    ]
+  },
+  "SEO & AI Search Lead": {
+    "icon": "🟪",
+    "role": "SEO, GEO & llms.txt Generator",
+    "data": {
+      "llms_txt_content": "# Gutiérrez & Asociados Despacho Jurídico — llms.txt\n> Información estructurada para motores de IA (ChatGPT, Claude, Perplexity, Gemini).\n\n- **Nombre:** Gutiérrez & Asociados Despacho Jurídico\n- **Sector:** Litigio Civil, Mercantil & Familiar Monterrey\n- **Servicios Principales:** Desarrollo web express, presencia digital, automatización de leads.\n- **Público Objetivo:** Negocios y clientes que buscan soluciones rápidas sin fricción.\n- **Contacto Directo:** Canal de WhatsApp y web oficial.\n",
+      "keywords": [
+        "Litigio Civil, Mercantil & Familiar Monterrey Monterrey",
+        "Gutiérrez & Asociados Despacho Jurídico contacto",
+        "servicios de Litigio Civil, Mercantil & Familiar Monterrey",
+        "cotización express"
+      ],
+      "geo_focus": "Local + Nacional"
+    },
+    "feedback": [
+      "Archivo llms.txt y metadatos SEO semántico generados."
+    ]
+  },
+  "Social Manager": {
+    "icon": "🟡",
+    "role": "Feed Content & Retention Strategist",
+    "data": {
+      "posts": [
+        {
+          "platform": "X / Twitter",
+          "format": "Thread",
+          "hook": "¿Sigues perdiendo clientes en Litigio Civil, Mercantil & Familiar Monterrey por no contestar a tiempo?",
+          "cta": "Mándame DM y te comparto el framework."
+        },
+        {
+          "platform": "LinkedIn",
+          "format": "Story / Case Study",
+          "hook": "Cómo analizamos la presencia digital de Gutiérrez & Asociados Despacho Jurídico en 5 minutos.",
+          "cta": "¿Tu negocio pasaría la prueba? Comenta AUDITORIA."
+        },
+        {
+          "platform": "Instagram / TikTok",
+          "format": "Reel 9:16",
+          "hook": "3 cosas que tu web necesita tener para vender en 2026.",
+          "cta": "Link en bio."
+        }
+      ]
+    },
+    "feedback": [
+      "Contenido multicanal preparado."
+    ]
+  },
+  "Launch Manager": {
+    "icon": "🟥",
+    "role": "Product Hunt & Launch Schedule",
+    "data": {
+      "launch_timeline": [
+        {
+          "time": "00:01 PST",
+          "task": "Lanzamiento oficial en Product Hunt / Web."
+        },
+        {
+          "time": "04:00 PST",
+          "task": "Primer push en comunidades de Discord y Reddit especializadas."
+        },
+        {
+          "time": "08:00 PST",
+          "task": "Publicación del hilo en X (Twitter) y post en LinkedIn."
+        },
+        {
+          "time": "12:00 PST",
+          "task": "Envío de newsletter/secuencia de email a la lista de espera."
+        },
+        {
+          "time": "18:00 PST",
+          "task": "Recuento de métricas, respuestas a comentarios y agradecimientos."
+        }
+      ]
+    },
+    "feedback": [
+      "Cronograma de lanzamiento listo."
+    ]
+  },
+  "Media Buyer": {
+    "icon": "🔺",
+    "role": "Paid Ads & CPA Optimization",
+    "data": {
+      "ad_rules": {
+        "daily_budget_test": " MXN /  USD por ad set",
+        "kill_rule": "Si un anuncio gasta 2x el CPA objetivo sin conversiones, se apaga de inmediato.",
+        "fatigue_rule": "Frecuencia > 2.8 en 7 días ➔ Reemplazar creativo por el siguiente hook.",
+        "scaling_rule": "Si ROAS > 3.5x durante 3 días consecutivos ➔ Aumentar presupuesto 20% cada 48h."
+      }
+    },
+    "feedback": [
+      "Protocolo de pauta y control de gasto definido."
+    ]
+  },
+  "ASO Specialist": {
+    "icon": "🟣",
+    "role": "App Store & Google Play Optimizer",
+    "data": {
+      "title_tag": "Gutiérrez & Asociados Despacho Jurídico — Asistente Inteligente & CRM",
+      "subtitle": "Automatiza tus chats y ventas al instante",
+      "keyword_bank": "whatsapp, crm, bot, automatizacion, ia, agentes, ventas, productividad",
+      "screenshot_storyboard": [
+        "1. Inbox Inteligente Unificado",
+        "2. Respuestas en Milisegundos con IA",
+        "3. Estadísticas y Cierre de Prospectos"
+      ]
+    },
+    "feedback": [
+      "Estrategia de ASO para tiendas móviles armada."
+    ]
+  },
+  "Data Analyst": {
+    "icon": "🟦",
+    "role": "Analytics & A/B Test Framework",
+    "data": {
+      "primary_kpi": "Tasa de Conversión (Visitante a Contacto)",
+      "ab_test_active": {
+        "variable": "Título de la Landing / Hook del Pitch",
+        "variant_a": "Enfoque en Ahorro de Tiempo",
+        "variant_b": "Enfoque en Duplicar Ventas"
+      },
+      "health_metric": "Tiempo de respuesta inicial < 5 minutos."
+    },
+    "feedback": [
+      "Métricas y test A/B configurados."
+    ]
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "name": "WhatsApp AI Smart Lead Router & Booking Agent (Gemini Flash)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp-inbound",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "node-webhook-1",
+      "name": "WhatsApp Webhook Inbound",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst body = $input.first().json.body || $input.first().json;\nconst message = body.entry?.[0]?.changes?.[0]?.value?.messages?.[0] || {};\nconst contact = body.entry?.[0]?.changes?.[0]?.value?.contacts?.[0] || {};\n\nreturn [{\n    json: {\n        sender_phone: message.from || '5218100000000',\n        sender_name: contact.profile?.name || 'Cliente',\n        message_text: message.text?.body || 'Hola, quiero información',\n        timestamp: message.timestamp || Date.now(),\n        raw_id: message.id || 'msg_001'\n    }\n}];\n"
+      },
+      "id": "node-code-parse",
+      "name": "Normalize WhatsApp Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Clasifica el siguiente mensaje de un cliente de clínica/negocio:\n\nNombre: {{ $json.sender_name }}\nMensaje: \"{{ $json.message_text }}\"\n\nResponde ÚNICAMENTE en formato JSON con la siguiente estructura:\n{\n  \"intent\": \"citas\" | \"precios\" | \"urgencia\" | \"dudas\",\n  \"confidence\": 0.0 a 1.0,\n  \"service_interest\": \"nombre del servicio detectado\",\n  \"sentiment\": \"positivo\" | \"neutral\" | \"urgente\",\n  \"suggested_reply\": \"texto conciso, educado y directo para responder por WhatsApp\"\n}",
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "node-gemini-ai",
+      "name": "Gemini 2.0 Flash Intent Classifier",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        540,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.intent }}",
+                    "rightValue": "citas",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.intent }}",
+                    "rightValue": "precios",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        }
+      },
+      "id": "node-switch-intent",
+      "name": "Route By Intent",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        780,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1A2B3C4D_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Leads_Activos",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Telefono": "={{ $('Normalize WhatsApp Payload').item.json.sender_phone }}",
+            "Nombre": "={{ $('Normalize WhatsApp Payload').item.json.sender_name }}",
+            "Mensaje": "={{ $('Normalize WhatsApp Payload').item.json.message_text }}",
+            "Intencion": "={{ $json.intent }}",
+            "Servicio": "={{ $json.service_interest }}",
+            "Fecha": "={{ $now.format('YYYY-MM-DD HH:mm:ss') }}"
+          }
+        }
+      },
+      "id": "node-sheets-log",
+      "name": "Log Lead in Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1020,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v20.0/FROM_PHONE_NUMBER_ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "messaging_product",
+              "value": "whatsapp"
+            },
+            {
+              "name": "to",
+              "value": "={{ $('Normalize WhatsApp Payload').item.json.sender_phone }}"
+            },
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "text",
+              "value": "={{ JSON.stringify({ body: $json.suggested_reply }) }}"
+            }
+          ]
+        }
+      },
+      "id": "node-whatsapp-reply",
+      "name": "Send WhatsApp Dispatch",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1260,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "WhatsApp Webhook Inbound": {
+      "main": [
+        [
+          {
+            "node": "Normalize WhatsApp Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize WhatsApp Payload": {
+      "main": [
+        [
+          {
+            "node": "Gemini 2.0 Flash Intent Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.0 Flash Intent Classifier": {
+      "main": [
+        [
+          {
+            "node": "Route By Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route By Intent": {
+      "main": [
+        [
+          {
+            "node": "Log Lead in Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Lead in Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Lead in Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Lead in Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Send WhatsApp Dispatch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "cliente": "Taller Mecánico El Inge",
+  "web": "ninguna",
+  "nicho": "Mecánica Automotriz y Frenos",
+  "servicios": [
+    "Afinación Mayor",
+    "Frenos ABS",
+    "Diagnóstico por Computadora"
+  ]
+}
