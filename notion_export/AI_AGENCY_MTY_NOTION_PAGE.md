@@ -1,6 +1,6 @@
 # ⚡ AI AGENCY MTY — Sistema Central de Operaciones & Monetización
 > **Autor:** Jesús Alfonso Gutiérrez Flores
-> **Repositorio GitHub:** [ponchogf88/agencia-core](https://github.com/ponchogf88/agencia-core)
+> **Repositorio GitHub:** [ponchogf88/ai-agency](https://github.com/ponchogf88/ai-agency)
 > **Fecha de Actualización:** 22 de Agosto de 2026
 > **Estado:** 🟢 Activo en Producción
 > **Teléfonos Activos:** WhatsApp Business: `+52 81 4005 0088` | Personal: `+52 81 3051 6527`

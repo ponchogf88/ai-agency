@@ -10,13 +10,14 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
 NOTION_TOKEN = "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"
 NOTION_PAGE_ID = "3a2b8dfb26628180beadfa9c7f986f88"
 
-NOTION_EXPORT_DIR = Path("agencia-core/notion_export")
+NOTION_EXPORT_DIR = BASE_DIR / "notion_export"
 NOTION_EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
-# 1. Generate Structured Export for Notion (Markdown with Notion-friendly blocks)
+# 1. Generate Structured Export for Notion
 notion_master_doc = """# ⚡ AI AGENCY MTY — Sistema Central de Operaciones & Monetización
 > **Autor:** Jesús Alfonso Gutiérrez Flores
 > **Repositorio GitHub:** [ponchogf88/ai-agency](https://github.com/ponchogf88/ai-agency)
@@ -63,7 +64,7 @@ notion_master_doc = """# ⚡ AI AGENCY MTY — Sistema Central de Operaciones & 
 """
 (NOTION_EXPORT_DIR / "AI_AGENCY_MTY_NOTION_PAGE.md").write_text(notion_master_doc, encoding="utf-8")
 
-# 2. Generate Notion Database CSV (Opportunities)
+# 2. Generate Notion Database CSV
 csv_content = """Name,Category,Ticket,Margin,Status,Target Vertical,Platform
 Automation Rescue Audit,B2B Service,$150 USD,95%,Ready,Clínicas Estéticas San Pedro,WhatsApp
 Pipeline Pro Setup,B2B Service,$550 USD,90%,Ready,Clínicas & Spas MTY,n8n + Web
@@ -93,7 +94,7 @@ def sync_via_api():
             "object": "block",
             "type": "heading_1",
             "heading_1": {
-                "rich_text": [{"type": "text", "text": {"content": "⚡ AI AGENCY MTY — Sincronización Automática"}}]
+                "rich_text": [{"type": "text", "text": {"content": "⚡ AI AGENCY MTY — Sincronización Automática (ai-agency)"}}]
             }
         },
         {
@@ -101,14 +102,14 @@ def sync_via_api():
             "type": "callout",
             "callout": {
                 "icon": {"emoji": "🚀"},
-                "rich_text": [{"type": "text", "text": {"content": "Repositorio GitHub activo: https://github.com/ponchogf88/ai-agency | 14 Subagentes, 4 Productos Digitales y 3 Verticals B2B desplegados."}}]
+                "rich_text": [{"type": "text", "text": {"content": "Repositorio GitHub oficial: https://github.com/ponchogf88/ai-agency | 14 Subagentes, 4 Productos Digitales y 3 Verticals B2B desplegados."}}]
             }
         },
         {
             "object": "block",
             "type": "paragraph",
             "paragraph": {
-                "rich_text": [{"type": "text", "text": {"content": "Última sincronización: 22 de Agosto de 2026. Todos los avances, guiones de prospección y bases de datos han sido respaldados en GitHub, Obsidian Vault y Notion."}}]
+                "rich_text": [{"type": "text", "text": {"content": "Última sincronización: 22 de Agosto de 2026. Todo el código, guiones de prospección y bases de datos han sido respaldados en GitHub (ai-agency), Obsidian Vault y Notion."}}]
             }
         }
     ]

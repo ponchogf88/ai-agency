@@ -7,6 +7,7 @@ AI AGENCY MTY & GUTIERREZ CONSULTING
 import shutil
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
 OBSIDIAN_VAULT = Path("/Users/user/Desktop/Projects/Obsidian-Vault")
 TARGET_DIR = OBSIDIAN_VAULT / "AI-AGENCY-MTY"
 TARGET_DIR.mkdir(parents=True, exist_ok=True)
@@ -60,26 +61,16 @@ status: "Activo / Producción"
 (TARGET_DIR / "00_CENTRAL_DASHBOARD.md").write_text(dashboard, encoding="utf-8")
 
 # 2. 01_BANCO_DE_IDEAS_MASTER.md
-banco_content = Path("/Users/user/.gemini/antigravity-cli/brain/f22662c3-8f63-45be-8cd7-8df0478cd07e/BANCO_DE_IDEAS.md").read_text(encoding="utf-8")
-(TARGET_DIR / "01_BANCO_DE_IDEAS_MASTER.md").write_text(f"""---
-tags:
-  - banco-ideas
-  - estrategia
-  - unit-economics
----
-{banco_content}
-""", encoding="utf-8")
+banco_path = Path("/Users/user/.gemini/antigravity-cli/brain/f22662c3-8f63-45be-8cd7-8df0478cd07e/BANCO_DE_IDEAS.md")
+if banco_path.exists():
+    banco_content = banco_path.read_text(encoding="utf-8")
+    (TARGET_DIR / "01_BANCO_DE_IDEAS_MASTER.md").write_text(f"---\ntags:\n  - banco-ideas\n  - estrategia\n  - unit-economics\n---\n{banco_content}\n", encoding="utf-8")
 
 # 3. 02_CATALOGO_PRODUCTOS_DIGITALES.md
-catalog_content = Path("/Users/user/.gemini/antigravity-cli/brain/f22662c3-8f63-45be-8cd7-8df0478cd07e/DIGITAL_PRODUCTS_CATALOG.md").read_text(encoding="utf-8")
-(TARGET_DIR / "02_CATALOGO_PRODUCTOS_DIGITALES.md").write_text(f"""---
-tags:
-  - productos-digitales
-  - gumroad
-  - pricing
----
-{catalog_content}
-""", encoding="utf-8")
+catalog_path = Path("/Users/user/.gemini/antigravity-cli/brain/f22662c3-8f63-45be-8cd7-8df0478cd07e/DIGITAL_PRODUCTS_CATALOG.md")
+if catalog_path.exists():
+    catalog_content = catalog_path.read_text(encoding="utf-8")
+    (TARGET_DIR / "02_CATALOGO_PRODUCTOS_DIGITALES.md").write_text(f"---\ntags:\n  - productos-digitales\n  - gumroad\n  - pricing\n---\n{catalog_content}\n", encoding="utf-8")
 
 # 4. 03_BLUEPRINTS_AUTOMATIZACION.md
 bp_note = """---
@@ -111,9 +102,9 @@ Los flujos de trabajo están validados e incluidos en el repositorio de GitHub:
 (TARGET_DIR / "03_BLUEPRINTS_AUTOMATIZACION.md").write_text(bp_note, encoding="utf-8")
 
 # 5. 04_PROSPECCION_B2B_MTY.md
-p1 = Path("agencia-core/swarms/enjambre_a_b2b/clinicas_outreach_pack.md").read_text(encoding="utf-8")
-p2 = Path("agencia-core/swarms/enjambre_a_b2b/despachos_outreach_pack.md").read_text(encoding="utf-8")
-p3 = Path("agencia-core/swarms/enjambre_a_b2b/talleres_outreach_pack.md").read_text(encoding="utf-8")
+p1 = (BASE_DIR / "swarms/enjambre_a_b2b/clinicas_outreach_pack.md").read_text(encoding="utf-8")
+p2 = (BASE_DIR / "swarms/enjambre_a_b2b/despachos_outreach_pack.md").read_text(encoding="utf-8")
+p3 = (BASE_DIR / "swarms/enjambre_a_b2b/talleres_outreach_pack.md").read_text(encoding="utf-8")
 (TARGET_DIR / "04_PROSPECCION_B2B_MTY.md").write_text(f"""---
 tags:
   - prospeccion
@@ -137,8 +128,8 @@ tags:
 """, encoding="utf-8")
 
 # 6. 05_MARKETPLACES_UPWORK_FIVERR.md
-up = Path("agencia-core/marketplace_listings/upwork_project_catalog.md").read_text(encoding="utf-8")
-fv = Path("agencia-core/marketplace_listings/fiverr_gig_listing.md").read_text(encoding="utf-8")
+up = (BASE_DIR / "marketplace_listings/upwork_project_catalog.md").read_text(encoding="utf-8")
+fv = (BASE_DIR / "marketplace_listings/fiverr_gig_listing.md").read_text(encoding="utf-8")
 (TARGET_DIR / "05_MARKETPLACES_UPWORK_FIVERR.md").write_text(f"""---
 tags:
   - upwork
@@ -156,7 +147,7 @@ tags:
 """, encoding="utf-8")
 
 # 7. 06_CONTRATOS_Y_LEGAL_IA.md
-contract = Path("agencia-core/swarms/enjambre_c_marketplaces/contrato_prestacion_servicios_ia.md").read_text(encoding="utf-8")
+contract = (BASE_DIR / "swarms/enjambre_c_marketplaces/contrato_prestacion_servicios_ia.md").read_text(encoding="utf-8")
 (TARGET_DIR / "06_CONTRATOS_Y_LEGAL_IA.md").write_text(f"""---
 tags:
   - legal
@@ -187,4 +178,11 @@ tags:
 """
 (TARGET_DIR / "07_CRONOGRAMA_Y_ESTRATEGIA_HORARIOS.md").write_text(cron, encoding="utf-8")
 
+# Also copy to secondary vault in PRODUCTOS DIGITALES
+sec_vault = Path("/Users/user/Desktop/Projects/PRODUCTOS DIGITALES/OBSIDIAN_VAULT/AI-AGENCY-MTY")
+sec_vault.mkdir(parents=True, exist_ok=True)
+for item in TARGET_DIR.glob("*.md"):
+    shutil.copy(item, sec_vault / item.name)
+
 print(f"✅ Sincronización exitosa con Obsidian Vault en: {TARGET_DIR}")
+print(f"✅ Sincronización exitosa con Vault Secundario en: {sec_vault}")
