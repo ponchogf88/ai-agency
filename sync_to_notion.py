@@ -19,7 +19,7 @@ NOTION_EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 # 1. Generate Structured Export for Notion (Markdown with Notion-friendly blocks)
 notion_master_doc = """# ⚡ AI AGENCY MTY — Sistema Central de Operaciones & Monetización
 > **Autor:** Jesús Alfonso Gutiérrez Flores
-> **Repositorio GitHub:** [ponchogf88/agencia-core](https://github.com/ponchogf88/agencia-core)
+> **Repositorio GitHub:** [ponchogf88/ai-agency](https://github.com/ponchogf88/ai-agency)
 > **Fecha de Actualización:** 22 de Agosto de 2026
 > **Estado:** 🟢 Activo en Producción
 > **Teléfonos Activos:** WhatsApp Business: `+52 81 4005 0088` | Personal: `+52 81 3051 6527`
@@ -101,7 +101,7 @@ def sync_via_api():
             "type": "callout",
             "callout": {
                 "icon": {"emoji": "🚀"},
-                "rich_text": [{"type": "text", "text": {"content": "Repositorio GitHub activo: https://github.com/ponchogf88/agencia-core | 14 Subagentes, 4 Productos Digitales y 3 Verticals B2B desplegados."}}]
+                "rich_text": [{"type": "text", "text": {"content": "Repositorio GitHub activo: https://github.com/ponchogf88/ai-agency | 14 Subagentes, 4 Productos Digitales y 3 Verticals B2B desplegados."}}]
             }
         },
         {

@@ -23,7 +23,7 @@ tags:
   - whatsapp
 date: 2026-08-22
 author: "Jesús Alfonso Gutiérrez Flores"
-github_repo: "https://github.com/ponchogf88/agencia-core"
+github_repo: "https://github.com/ponchogf88/ai-agency"
 status: "Activo / Producción"
 ---
 
@@ -48,7 +48,7 @@ status: "Activo / Producción"
 ## 📊 Números de Contacto Configurados
 - **WhatsApp Business (Agencia):** `+52 81 4005 0088`
 - **WhatsApp Personal (Directo):** `+52 81 3051 6527`
-- **GitHub Repository:** [ponchogf88/agencia-core](https://github.com/ponchogf88/agencia-core)
+- **GitHub Repository:** [ponchogf88/ai-agency](https://github.com/ponchogf88/ai-agency)
 
 ---
 
